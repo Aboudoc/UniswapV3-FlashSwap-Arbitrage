@@ -51,22 +51,7 @@
     <li><a href="#Simple-Arbitrage">Simple Arbitrage</a></li>
     <li><a href="#Arbitrage-Profit-For-Constant-Product-AMM">Arbitrage Profit For Constant Product AMM</a></li>
     <li><a href="#Uniswap-V3-Single-Hop-Swap">Uniswap V2 Single Hop Swap</a></li>
-      <li><a href="#Uniswap-V3-Multi-Hop-Swap">Uniswap V3 Multi Hop Swap</a></li>
-    <li><a href="#Uniswap-V3-Curve-of-real-reserves">Uniswap V3 Curve of real reserves</a></li> 
     <li><a href="#Test-Mint-new-position">Test Mint new position</a></li>
-    <li><a href="#Uniswap-V3-Liquidity-of-a-single-position">Uniswap V3 Liquidity of a single position</a></li> 
-    <li><a href="#Test-Collect-fees">Test Collect fees</a></li>
-    <li><a href="#Test-Increase-liquidity">Test Increase liquidity</a></li>
-    <li><a href="#Test-Decrease-liquidity">Test Decrease liquidity</a></li>
-    <li><a href="#Uniswap-V3-Liquidity-Delta">Uniswap V3 Liquidity Delta</a></li>
-    <li><a href="#Uniswap-V3-How-many-tokens-to-add">Uniswap V3 How many tokens to add</a></li>
-    <li><a href="#Uniswap-V3-Add-and-Remove-Liquidity">Uniswap V2 Add and Remove Liquidity</a></li>
-    <li><a href="#Uniswap-V3-Price-of-ETH-from-sqrtPriceX96">Uniswap V3 Price of ETH from sqrtPriceX96</a></li>
-    <li><a href="#Uniswap-V3-Tick-and-sqrtPriceX96">Uniswap V3 Tick and sqrtPriceX96</a></li>
-    <li><a href="#Uniswap-V3-Price-Change-from-a-Swap">Uniswap V3 Price Change from a Swap</a></li>
-    <li><a href="#Uniswap-V3-Liquidity-Price-Graph">Uniswap V3 Liquidity Price Graph</a></li>
-    <li><a href="#Uniswap-V3-Liquidity-Price-Graph-Example">Uniswap V3 Liquidity Price Graph Example</a></li>
-    <li><a href="#Uniswap-V3-Flash-Swap">Uniswap V3 Flash Swap</a></li>
     <li><a href="#Forking-mainnet">Forking mainnet</a></li>
     <li><a href="#Note">Note</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -228,79 +213,43 @@ Let's start with the `AMM price`
 <img src="images/maths06.png" alt="Test">
 </div>
 
+Let's find the blue slope:
+
+<div>
+<img src="images/maths07.png" alt="Test">
+</div>
+
+Let's also rewrite dy0 in terms of price and dx
+
+<div>
+<img src="images/maths08.png" alt="Test">
+</div>
+
+We are now ready to rewrite the arbitrage profit
+
+<div>
+<img src="images/maths09.png" alt="Test">
+</div>
+
+In some cases, we can further sumplify this equation:
+
+<div>
+<img src="images/maths10.png" alt="Test">
+</div>
+
+**Finally:**
+
+<div>
+<img src="images/Arbitrage.png" alt="Test">
+</div>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Uniswap V3 Single Hop Swap
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Uniswap V3 Curve of real reserves
-
-In Uniswap V3 the curve of the real reserve is giving by the formula below (orange square)
-
-Let's derive this equation starting from the constant product equation `XY = K`
-
-<div>
-<img src="images/maths0bis.png" alt="Maths">
-</div>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Test Mint new position
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Test Collect fees
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 Liquidity of a single position 
-
-We previously derived the curve for the real reserves.
-
-Let's use this equation to derive the equation for the liquidity(this equation has 3 parts):
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Test Decrease liquidity
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 Liquidity Delta
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 How many tokens to add
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 Add and Remove Liquidity
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 Price of ETH from sqrtPriceX96
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 Tick and sqrtPriceX96
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 Price Change from a Swap
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 Liquidity Price Graph
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 Liquidity Price Graph Example
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Test Flash Swap
-
-## Uniswap V3 Flash Swap
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
