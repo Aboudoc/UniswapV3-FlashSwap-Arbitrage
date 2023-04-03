@@ -163,12 +163,15 @@ Inside uniswapV3Callback, we will need to send wethAmountIn amount of WETH to po
 - Encode `data` to be later decoded inside `uniswapV3SwapCallback`. The data to encode are `msg.sender`, `pool0` and `fee1`.
 - Initiate the arbitrage by calling `IUniswapV3Pool.swap` on `pool0`. Below are the inputs to pass.
 
-* IUniswapV3Pool.swap function inputs
-  recipient: Address to receive output token
-  zeroForOne: Direction of the swap, true for token0 to token1
-  amountSpecified: Amount to swap
-  sqrtPriceLimitX96: Limit for the change in price
-  data: Data to be passed to `uniswapV3SwapCallback`
+  **_recipient:_** Address to receive output token
+
+  **_zeroForOne_**: Direction of the swap, true for token0 to token1
+
+  **_mountSpecified_**: Amount to swap
+
+  **_sqrtPriceLimitX96_**: Limit for the change in price
+
+  **_data_**: Data to be passed to `uniswapV3SwapCallback`
 
 ## Arbitrage Profit For Constant Product AMM
 
@@ -260,7 +263,7 @@ In some cases, we can further sumplify this equation:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Test Arbitrage
+## Test Arbitrage (soon...)
 
 <div>
 <img src="images/Test.png" alt="Test">
@@ -306,13 +309,15 @@ You can find official Uniswap documentation below:
 
 ### Sources
 
+[Smart Contract Engineer](https://www.smartcontract.engineer/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
-- [ ] Maths
+- [-] Maths
 - [ ] Test on mainnet fork
 - [ ] Deploy on mainnet?
 - [ ] Further reading
