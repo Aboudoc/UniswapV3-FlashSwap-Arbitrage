@@ -15,7 +15,7 @@ npm add --save-dev dotenv
 
 Arbitrage between USDC/ETH 0.3% fee pool and USDC/ETH 0.05% fee pool.
 
-For this challenge, we will
+In this arbitrage example we will:
 
 Borrow USDC from one pool
 Swap USDC back to WETH in another pool
