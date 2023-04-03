@@ -124,33 +124,26 @@ To get a local copy up and running follow these simple example steps.
   npx hardhat verify --network goerli "contract address" "pair address"
   ```
 
-  ```shell
-  npm init -y
-  npm add --save-dev hardhat
-  npm add @uniswap/v3-periphery
-  npm add @uniswap/v3-core
-  npm add --save-dev dotenv
-  ```
-
-````
-
 ### Installation
 
 1. Clone the repo
-   ```sh
+
+```sh
    git clone https://github.com/Aboudoc/Uniswap-V3-Arbitrage.git
-````
+```
 
 2. Install NPM packages
-   ```sh
+
+```sh
    npm install
-   ```
+```
+
 3. Dependencies
 
-   ```sh
+```sh
     npm add @uniswap/v3-periphery @uniswap/v3-core
     npm add --save-dev dotenv
-   ```
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,9 +159,9 @@ If you need testnet funds, use the [Alchemy testnet faucet](https://goerlifaucet
 
 In this arbitrage example we will:
 
-Borrow USDC from one pool
-Swap USDC back to WETH in another pool
-Repay first pool with WETH
+Borrow `USDC` from one pool
+Swap `USDC` back to `WETH` in another pool
+Repay first pool with `WETH`
 If the amount of WETH bought back in step 2 is greater than the amount repaid in step 3, then there is profit from the the arbitrage. Otherwise there was a loss.
 
 <div>
