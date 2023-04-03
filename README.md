@@ -185,6 +185,20 @@ This function returns `amountOut`
 
 ### Function uniswapV3SwapCallback
 
+This function is called by `pool0` immediately after we call `IUniswapV3Pool.swap`.
+
+`amount0` is amount of USDC we borrowed. This variable will be a negative number since USDC is taken out of the pool.
+
+`amount1` is amount of WETH we owe to `pool0`.
+
+`data` is the data we've encoded inside the function `flashSwap`.
+
+1. Decode `data`
+2. `msg.sender`must be `pool0`
+3. Store `amount0` and `amount1` as `usdcAmountOut` and `wethAmountIn`
+4. Call `_swap` to swap USDC for WETH and store `wethAmountOut`
+5. Repay WETH back to `pool0`. If there is profit, transfer to `caller`. Otherwise transfer the loss from `caller`.
+
 ## Arbitrage Profit For Constant Product AMM
 
 let's see some equations related to the arbitrage profit for a constant product AMM
