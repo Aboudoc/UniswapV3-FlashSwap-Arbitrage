@@ -167,7 +167,7 @@ Inside uniswapV3Callback, we will need to send wethAmountIn amount of WETH to po
 
   **_`zeroForOne`:_** Direction of the swap, true for token0 to token1
 
-  **_`mountSpecified`:_** Amount to swap
+  **_`amountSpecified`:_** Amount to swap
 
   **_`sqrtPriceLimitX96`:_** Limit for the change in price
 
