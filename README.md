@@ -169,7 +169,7 @@ Inside uniswapV3Callback, we will need to send wethAmountIn amount of WETH to po
 
   **_mountSpecified_**: Amount to swap
 
-  **_sqrtPriceLimitX96_**: Limit for the change in price
+  **_`sqrtPriceLimitX96`_**: Limit for the change in price
 
   **_data_**: Data to be passed to `uniswapV3SwapCallback`
 
