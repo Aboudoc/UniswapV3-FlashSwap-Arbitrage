@@ -128,22 +128,22 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
 
-```sh
+   ```sh
    git clone https://github.com/Aboudoc/Uniswap-V3-Arbitrage.git
-```
+   ```
 
 2. Install NPM packages
 
-```sh
+   ```sh
    npm install
-```
+   ```
 
 3. Dependencies
 
-```sh
-    npm add @uniswap/v3-periphery @uniswap/v3-core
-    npm add --save-dev dotenv
-```
+   ```sh
+   npm add @uniswap/v3-periphery @uniswap/v3-core
+   npm add --save-dev dotenv
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -153,7 +153,7 @@ To get a local copy up and running follow these simple example steps.
 
 If you need testnet funds, use the [Alchemy testnet faucet](https://goerlifaucet.com/).
 
-**This project shows how to swap, add and remove liquidity**
+**This project shows a simple arbitrage strategy**
 
 ## Simple Arbitrage
 
@@ -170,18 +170,22 @@ If the amount of WETH bought back in step 2 is greater than the amount repaid in
 
 You can find a deep overview of Uniswap v3 in [this repo](https://github.com/Aboudoc/Uniswap-v3)
 
-## Test Single and Multi hop swap
+## Arbitrage Profit For Constant Product AMM
 
-```sh
-npx hardhat test test/unlock-account.test.js
-```
+let's see some equations related to the arbitrage profit for a constant product AMM
 
-```sh
-npx hardhat test test/swapV3.test.js
-```
+First, assume that a CEX has infinite liquidity
+
+The AMM has token X and token Y, and the price P = Y / X
+
+On the CEX the price is lower, `p - dp`
+
+An arbitrageur can make a profit:
+
+- Sell dy0 of token Y to the CEX and get back dx amount of token X
 
 <div>
-<img src="images/test.png" alt="Test">
+<img src="images/maths.png" alt="Test">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
