@@ -141,6 +141,8 @@ If you need testnet funds, use the [Alchemy testnet faucet](https://goerlifaucet
 
 You can find a deep overview of Uniswap v3 in [this repo](https://github.com/Aboudoc/Uniswap-v3)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Simple Arbitrage Contract
 
 <div>
@@ -198,6 +200,8 @@ This function is called by `pool0` immediately after we call `IUniswapV3Pool.swa
 3. Store `amount0` and `amount1` as `usdcAmountOut` and `wethAmountIn`
 4. Call `_swap` to swap USDC for WETH and store `wethAmountOut`
 5. Repay WETH back to `pool0`. If there is profit, transfer to `caller`. Otherwise transfer the loss from `caller`.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Arbitrage Profit For Constant Product AMM
 
