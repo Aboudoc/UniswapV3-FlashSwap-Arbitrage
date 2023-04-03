@@ -50,7 +50,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#Simple-Arbitrage-Contract">Simple Arbitrage Contract</a></li>
     <li><a href="#Arbitrage-Profit-For-CPAMM">Arbitrage Profit For CPAMM</a></li>
-    <li><a href="#Test-Mint-new-position">Test Mint new position</a></li>
+    <li><a href="#Test-Arbitrage-(soon...)">Test Arbitrage (soon...)</a></li>
     <li><a href="#Forking-mainnet">Forking mainnet</a></li>
     <li><a href="#Note">Note</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
