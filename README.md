@@ -14,7 +14,7 @@
     <img src="images/logo1.png" alt="Logo" width="100" height="80">
   </a>
 
-<h3 align="center">Uniswap V3</h3>
+<h3 align="center">Arbitrage Profit for Constant Product AMM</h3>
 
   <p align="center">
     Uniswap V3
@@ -176,13 +176,11 @@ let's see some equations related to the arbitrage profit for a constant product 
 
 First, assume that a CEX has infinite liquidity
 
-The AMM has token X and token Y, and the price P = Y / X
+The AMM has token X and token Y, and the price `P = Y / X`
 
 On the CEX the price is lower, `p - dp`
 
 An arbitrageur can make a profit:
-
-- Sell dy0 of token Y to the CEX and get back dx amount of token X
 
 <div>
 <img src="images/maths.png" alt="Test">
