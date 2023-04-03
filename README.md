@@ -49,7 +49,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#Simple-Arbitrage">Simple Arbitrage</a></li>
-    <li><a href="#Test-Single-and-Multi-hop-swap">Test Single and Multi hop swap</a></li>
+    <li><a href="#Arbitrage-Profit-For-Constant-Product-AMM">Arbitrage Profit For Constant Product AMM</a></li>
     <li><a href="#Uniswap-V3-Single-Hop-Swap">Uniswap V2 Single Hop Swap</a></li>
       <li><a href="#Uniswap-V3-Multi-Hop-Swap">Uniswap V3 Multi Hop Swap</a></li>
     <li><a href="#Uniswap-V3-Curve-of-real-reserves">Uniswap V3 Curve of real reserves</a></li> 
@@ -174,16 +174,58 @@ You can find a deep overview of Uniswap v3 in [this repo](https://github.com/Abo
 
 let's see some equations related to the arbitrage profit for a constant product AMM
 
+<div>
+<img src="images/maths.png" alt="Test">
+</div>
+
 First, assume that a CEX has infinite liquidity
 
-The AMM has token X and token Y, and the price `P = Y / X`
+The AMM has token `X` and token `Y`, and the price `P = Y / X`
 
 On the CEX the price is lower, `p - dp`
 
-An arbitrageur can make a profit:
+An arbitrageur can make a profit: The difference in the token Y that he sold on the CEX and then got back from the AMM is the profit `A`
 
 <div>
-<img src="images/maths.png" alt="Test">
+<img src="images/maths01.png" alt="Test">
+</div>
+
+The green line represents the current price of the AMM. There are X0 amount of token X and Y0 amount of token Y => P = Y0 / X0
+
+<div>
+<img src="images/maths02.png" alt="Test">
+</div>
+
+On the CEX (red line), the price is quoted as `P - dp`
+
+<div>
+<img src="images/maths03.png" alt="Test">
+</div>
+
+The trade in purple will lower the price for `P` to `P - dp`. But before the arbitrageur can execute this trade, he first has to get `dx` amount of token `X`.
+
+<div>
+<img src="images/maths04.png" alt="Test">
+</div>
+
+To do that, the arbitrageur will go to the CEX and then sell `dy0` amount of token `Y` to get `dx` amount of token `X`. Next he will go to AMM and sell this exact amount of token `X` to get back in return `dy1` amount of token `Y`.
+
+**=> On the AMM the price has shifted from P to P - dp.**
+
+<div>
+<img src="images/maths05.png" alt="Test">
+</div>
+
+We can also write this equation in terms of price change and the amount of token `X` that was sold (dx).
+
+To do that we'll need to get two prices, the price of the CEX and the price of the AMM
+
+Take the difference, multiply it by dx and this is the arbitrage profit
+
+Let's start with the `AMM price`
+
+<div>
+<img src="images/maths06.png" alt="Test">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
