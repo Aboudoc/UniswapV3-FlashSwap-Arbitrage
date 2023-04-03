@@ -49,7 +49,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#Simple-Arbitrage-Contract">Simple Arbitrage Contract</a></li>
-    <li><a href="#Arbitrage-Profit-For-Constant-Product-AMM">Arbitrage Profit For Constant Product AMM</a></li>
+    <li><a href="#Arbitrage-Profit-For-CPAMM">Arbitrage Profit For CPAMM</a></li>
     <li><a href="#Test-Mint-new-position">Test Mint new position</a></li>
     <li><a href="#Forking-mainnet">Forking mainnet</a></li>
     <li><a href="#Note">Note</a></li>
@@ -203,7 +203,7 @@ This function is called by `pool0` immediately after we call `IUniswapV3Pool.swa
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Arbitrage Profit For Constant Product AMM
+## Arbitrage Profit For CPAMM
 
 let's see some equations related to the arbitrage profit for a constant product AMM
 
