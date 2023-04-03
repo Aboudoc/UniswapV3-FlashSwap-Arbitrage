@@ -160,18 +160,30 @@ This function will start the arbitrage by borrowing USDC from `pool0`. `pool0` w
 
 Inside uniswapV3Callback, we will need to send wethAmountIn amount of WETH to pool0.
 
-- Encode `data` to be later decoded inside `uniswapV3SwapCallback`. The data to encode are `msg.sender`, `pool0` and `fee1`.
-- Initiate the arbitrage by calling `IUniswapV3Pool.swap` on `pool0`. Below are the inputs to pass.
+1. Encode `data` to be later decoded inside `uniswapV3SwapCallback`. The data to encode are `msg.sender`, `pool0` and `fee1`.
+2. Initiate the arbitrage by calling `IUniswapV3Pool.swap` on `pool0`. Below are the inputs to pass.
 
-  **_`recipient`:_** Address to receive output token
+   **_`recipient`:_** Address to receive output token
 
-  **_`zeroForOne`:_** Direction of the swap, true for token0 to token1
+   **_`zeroForOne`:_** Direction of the swap, true for token0 to token1
 
-  **_`amountSpecified`:_** Amount to swap
+   **_`amountSpecified`:_** Amount to swap
 
-  **_`sqrtPriceLimitX96`:_** Limit for the change in price
+   **_`sqrtPriceLimitX96`:_** Limit for the change in price
 
-  **_`data`:_** Data to be passed to `uniswapV3SwapCallback`
+   **_`data`:_** Data to be passed to `uniswapV3SwapCallback`
+
+### Function \_flash
+
+Swap `tokenIn` for `tokenOut` by calling `router.exactInputSingle`
+
+1. Approve `amountIn`
+2. Prepare `params`
+3. Call `exactInputSingle` on `router` and store `amountOut`
+
+This function returns `amountOut`
+
+### Function uniswapV3SwapCallback
 
 ## Arbitrage Profit For Constant Product AMM
 
