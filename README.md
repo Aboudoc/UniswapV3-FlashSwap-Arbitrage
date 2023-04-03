@@ -48,9 +48,8 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#Simple-Arbitrage">Simple Arbitrage</a></li>
+    <li><a href="#Simple-Arbitrage-Contract">Simple Arbitrage Contract</a></li>
     <li><a href="#Arbitrage-Profit-For-Constant-Product-AMM">Arbitrage Profit For Constant Product AMM</a></li>
-    <li><a href="#Uniswap-V3-Single-Hop-Swap">Uniswap V2 Single Hop Swap</a></li>
     <li><a href="#Test-Mint-new-position">Test Mint new position</a></li>
     <li><a href="#Forking-mainnet">Forking mainnet</a></li>
     <li><a href="#Note">Note</a></li>
@@ -140,7 +139,13 @@ If you need testnet funds, use the [Alchemy testnet faucet](https://goerlifaucet
 
 **This project shows a simple arbitrage strategy**
 
-## Simple Arbitrage
+You can find a deep overview of Uniswap v3 in [this repo](https://github.com/Aboudoc/Uniswap-v3)
+
+## Simple Arbitrage Contract
+
+<div>
+<img src="images/Pools.png" alt="Test">
+</div>
 
 In this arbitrage example we will:
 
@@ -149,11 +154,21 @@ Swap `USDC` back to `WETH` in another pool
 Repay first pool with `WETH`
 If the amount of WETH bought back in step 2 is greater than the amount repaid in step 3, then there is profit from the the arbitrage. Otherwise there was a loss.
 
-<div>
-<img src="images/Pools.png" alt="Test">
-</div>
+### Function flashSwap
 
-You can find a deep overview of Uniswap v3 in [this repo](https://github.com/Aboudoc/Uniswap-v3)
+This function will start the arbitrage by borrowing USDC from `pool0`. `pool0` will send USDC to this contract and then call `uniswapV3SwapCallback`
+
+Inside uniswapV3Callback, we will need to send wethAmountIn amount of WETH to pool0.
+
+- Encode `data` to be later decoded inside `uniswapV3SwapCallback`. The data to encode are `msg.sender`, `pool0` and `fee1`.
+- Initiate the arbitrage by calling `IUniswapV3Pool.swap` on `pool0`. Below are the inputs to pass.
+
+* IUniswapV3Pool.swap function inputs
+  recipient: Address to receive output token
+  zeroForOne: Direction of the swap, true for token0 to token1
+  amountSpecified: Amount to swap
+  sqrtPriceLimitX96: Limit for the change in price
+  data: Data to be passed to `uniswapV3SwapCallback`
 
 ## Arbitrage Profit For Constant Product AMM
 
@@ -245,11 +260,11 @@ In some cases, we can further sumplify this equation:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Uniswap V3 Single Hop Swap
+## Test Arbitrage
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Test Mint new position
+<div>
+<img src="images/Test.png" alt="Test">
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
