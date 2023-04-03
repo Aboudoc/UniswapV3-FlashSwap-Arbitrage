@@ -163,15 +163,15 @@ Inside uniswapV3Callback, we will need to send wethAmountIn amount of WETH to po
 - Encode `data` to be later decoded inside `uniswapV3SwapCallback`. The data to encode are `msg.sender`, `pool0` and `fee1`.
 - Initiate the arbitrage by calling `IUniswapV3Pool.swap` on `pool0`. Below are the inputs to pass.
 
-  **_recipient:_** Address to receive output token
+  **_`recipient`:_** Address to receive output token
 
-  **_zeroForOne_**: Direction of the swap, true for token0 to token1
+  **_`zeroForOne`:_** Direction of the swap, true for token0 to token1
 
-  **_mountSpecified_**: Amount to swap
+  **_`mountSpecified`:_** Amount to swap
 
-  **_`sqrtPriceLimitX96`_**: Limit for the change in price
+  **_`sqrtPriceLimitX96`:_** Limit for the change in price
 
-  **_data_**: Data to be passed to `uniswapV3SwapCallback`
+  **_`data`:_** Data to be passed to `uniswapV3SwapCallback`
 
 ## Arbitrage Profit For Constant Product AMM
 
