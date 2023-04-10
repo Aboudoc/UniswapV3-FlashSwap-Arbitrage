@@ -53,20 +53,27 @@ describe("Arbitrage", function () {
     it("does the arbitrage", async function () {
       const wethAmountIn = 10n * 10n ** 18n;
 
-      const wethBalanceBefore = await weth.balanceOf(
-        uniswapV3Arbitrage.address
-      );
-      const usdcBalanceBefore = await usdc.balanceOf(
-        uniswapV3Arbitrage.address
+      const wethBalanceBefore = await weth.balanceOf(accounts[0].address);
+
+      console.log("---------------------CALLER FUNDED---------------------");
+
+      console.log(
+        "WETH balance of CALLER before ",
+        ethers.utils.formatEther(wethBalanceBefore)
       );
 
       await weth.approve(uniswapV3Arbitrage.address, wethAmountIn);
 
       await uniswapV3Arbitrage.flashSwap(pool0, fee1, wethAmountIn);
 
-      const usdcBalanceAfter = await usdc.balanceOf(uniswapV3Arbitrage.address);
+      console.log("---------------------ARBITRAGE---------------------");
 
-      console.log("USDC balance after", usdcBalanceAfter);
+      const wethBalanceAfter = await weth.balanceOf(accounts[0].address);
+
+      console.log(
+        "WETH balance of CALLER after",
+        ethers.utils.formatEther(wethBalanceAfter)
+      );
     });
   });
 });
