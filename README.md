@@ -87,7 +87,7 @@ To get a local copy up and running follow these simple example steps.
 - npm
 
   ```sh
-  npm init
+  npm init -y
   ```
 
 - hardhat
@@ -151,10 +151,11 @@ You can find a deep overview of Uniswap v3 in [this repo](https://github.com/Abo
 
 In this arbitrage example we will:
 
-Borrow `USDC` from one pool
-Swap `USDC` back to `WETH` in another pool
-Repay first pool with `WETH`
-If the amount of WETH bought back in step 2 is greater than the amount repaid in step 3, then there is profit from the the arbitrage. Otherwise there was a loss.
+1. Borrow `USDC` from one pool
+2. Swap `USDC` back to `WETH` in another pool
+3. Repay first pool with `WETH`
+
+   If the amount of WETH bought back in step 2 is greater than the amount repaid in step 3, then there is profit from the the arbitrage. Otherwise there was a loss.
 
 ### Function flashSwap
 
