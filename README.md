@@ -319,8 +319,12 @@ In some cases, we can further sumplify this equation:
 Note: Replace the `${}` component of the URL with your personal [Alchemy](https://www.alchemy.com/) API key.
 
 ```sh
-npx hardhat test test/swapV3.test.js
+npx hardhat test test/flashSwap.test.js
 ```
+
+<div>
+<img src="images/test.png" alt="Test">
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -349,7 +353,7 @@ You can find official Uniswap documentation below:
 ## Roadmap
 
 - [-] Maths
-- [ ] Test on mainnet fork
+- [-] Test on mainnet fork
 - [ ] Deploy on mainnet?
 - [ ] Further reading
 
