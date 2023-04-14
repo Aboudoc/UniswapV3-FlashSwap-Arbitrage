@@ -50,7 +50,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#Simple-Arbitrage-Contract">Simple Arbitrage Contract</a></li>
     <li><a href="#Arbitrage-Profit-For-CPAMM">Arbitrage Profit For CPAMM</a></li>
-    <li><a href="#Test-Arbitrage-(soon...)">Test Arbitrage (soon...)</a></li>
+    <li><a href="#Test-Arbitrage">Test Arbitrage</a></li>
     <li><a href="#Forking-mainnet">Forking mainnet</a></li>
     <li><a href="#Note">Note</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -294,10 +294,10 @@ In some cases, we can further sumplify this equation:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Test Arbitrage (soon...)
+## Test Arbitrage
 
 <div>
-<img src="images/Test.png" alt="Test">
+<img src="images/test.png" alt="Test">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -321,10 +321,6 @@ Note: Replace the `${}` component of the URL with your personal [Alchemy](https:
 ```sh
 npx hardhat test test/flashSwap.test.js
 ```
-
-<div>
-<img src="images/test.png" alt="Test">
-</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
